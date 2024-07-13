@@ -1,73 +1,272 @@
 /* Targeting comment tokens */
 /* Replace mtk3 with the appropriate class if different */
 .mtk3 {
-    font-family: 'Monaspace Radon', monospace !important;
-    font-style: italic !important;
+    font-family: 'GeistMono', monospace !important;
+    /* font-style: italic !important; */
     color: #008c7d !important;
 }
 
+/* .mtk1 {
+    color: #008c7d !important;
+} */
+
 .mtk15 {
-    font-family: 'Monaspace Radon', monospace !important;
+    font-family: 'GeistMono', monospace !important;
 }
 
-.mtk4 {
-    color: #fff !important;
-    opacity: 0.45 !important;
+/* .mtk4 {
     font-family: 'Monaspace Radon', monospace !important;
-    /* font-weight: 300 !important; */
-}
+} */
 
 .line-numbers {
     position: relative !important;
     width: 35px !important;
     font-size: 16px !important;
-    font-family: 'Monaspace Radon' !important;
+    font-family: 'GeistMono' !important;
+    opacity: 1;
 }
 
 .monaco-list.list_id_1 .monaco-list-row.selected {
-    border-radius: 5px !important;
-    background: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%) !important;
+    /* border-radius: 5px !important; */
+    /* background: linear-gradient(120deg, #e15e71 0%, #e15e71 100%) !important; */
+    background-color: rgb(168 85 247) !important;
+    opacity: 1 !important;
     /* border: 1px dashed rgba(255, 255, 255, .3) !important; */
-    box-shadow: 0px 8px 12px rgba(0, 0, 0, .5) !important;
+    /* box-shadow: 0px 8px 12px rgba(0, 0, 0, .5) !important; */
 }
 
 .monaco-list.list_id_1 .monaco-list-row.selected .label-name {
-    font-family: 'Monaspace Radon' !important;
+    /* font-family: 'Monaspace Radon' !important; */
     color: #000 !important;
+    opacity: 1 !important;
 }
 
-.monaco-list>.monaco-scrollable-element {
+.codicon-toolbar-more, .codicon-word-wrap {
+    display: none !important;
+}
+
+/* .monaco-list>.monaco-scrollable-element {
     height: 100% !important;
     padding: 19px 0 !important;
-}
+} */
 
 .monaco-workbench .part > .composite.title {
     display: none !important;
 }
 
-.explorer-folders-view {
-    height: 100% !important;
-    padding: 0 10px !important;
-}
-
 .monaco-editor-hover,
 .monaco-hover {
-  border-radius: 12px !important; /* Example border radius */
-  box-shadow: 0px 15px 85px rgba(0, 0, 0, 0.6);
-  border: 4px solid #e15e71 !important;
-  padding: 12px !important;
+    box-shadow: 0px 15px 85px rgba(0, 0, 0, 0.6);
+    /* box-shadow: 0px 0px 10px rgb(62 64 189 / 100%), 0px 0px 40px rgb(62 64 189 / 100%) !important; */
+    border: 2px solid rgb(168 85 247) !important;
+    /* border-image-slice: 1 !important; */
+    /* border-width: 4px !important; */
+    /* border-image-source: linear-gradient(to right, #e15e71, yellow) !important; */
+    border-radius: 12px !important;
+    /* border: 4px solid #e15e71 !important; */
+    /* padding: 20px !important; */
+    position: relative !important;
+    /* overflow-y: visible !important; */
+    /* overflow-x: visible !important; */
+    color: #fff !important;
 }
 
-/* custom.css */
+/* .monaco-hover::before {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    content: "💀 sudo rm -rf . 💀";
+    z-index: 1;
+    transform: translateX(-50%);
+    top: -45px;
+    left: 50%;
+    width: 100%;
+    border-radius: 6px;
+    text-align: center;
+    font-family: 'Monaspace Argon';
+    font-size: 16px;
+    padding: 6px;
+    background: linear-gradient(109.6deg, rgb(36, 45, 57) 11.2%, rgb(16, 37, 60) 51.2%, rgb(0, 0, 0) 98.6%);
+    background:rgba(0, 0, 0, 1);
+    border: 1px solid rgba(255, 255, 255, .2);
+    color: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, .5);
+} */
+
+.monaco-tree .monaco-tree-row .label-name,
+.monaco-list .monaco-list-row
+.monaco-icon-label .label-name {
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    color: #FFF !important;
+    /* opacity: 1 !important; */
+}
+
+.slider {
+    position: absolute !important;
+    right: 1px !important;
+    width: 5px !important;
+    background: #e15e71 !important;
+    border-radius: 5px !important;
+    left: auto !important
+}
+
+.monaco-workbench .part.titlebar>.titlebar-container>.titlebar-center>.window-title>.command-center .action-item.command-center-center {
+    border: none !important;
+    background: transparent !important;
+}
+
+/* Traffic lights */
+.titlebar-left {
+    justify-content: flex-start !important;
+    flex-grow: 0 !important;
+    width: auto !important;
+}
+
+/* Project Title */
+.search-label {
+    font-family: 'SF Pro Display' !important;
+    font-variant-ligatures: common-ligatures;
+    font-size: 14px !important;
+    color: yellow;
+    display: block;
+}
+
+.command-center-center {
+    width:  auto !important;
+}
+
+.quick-input-widget {
+    transform: translateY(-50%) !important;
+    top: 50% !important;
+    /* box-shadow: rgb(130 5 49 / 51%) 0px 1px 1px 0px inset, rgb(255 255 255 / 16%) 0px 50px 50px -30px, rgb(62 64 189 / 80%) 0px 30px 60px -30px !important; */
+    box-shadow: 0px 0px 20px rgb(88 28 135 / 1) !important;
+    /* border: 4px solid rgb(58 66 101 / 50%) !important; */
+    border: 2px solid rgb(168 85 247) !important;
+    padding: 10px 10px 18px 10px !important;
+    background-color: rgba(0, 0, 0, 1) !important;
+    /* backdrop-filter: blur(3px) !important; */
+    border-radius: 20px !important;
+}
+
+.monaco-list-rows {
+    background: none !important;
+}
+
+.monaco-list-row:hover {
+    /* background: orangered !important; */
+    /* background: rgb(168 85 247) !important; */
+}
+
+.notifications-toasts .monaco-list-row:hover {
+    background: none !important;
+}
+
+.monaco-list-row.focused {
+    background-color: rgb(181 198 228 / 25%) !important;
+}
+
+.synthetic-focus {
+    outline-color: rgba(50, 50, 50, 1) !important;
+}
+
+.quick-input-widget .monaco-label {
+    font-size: 16px !important;
+}
+
+/* .search-label::before, .search-label::after {
+    content: '🔥<--';
+    padding: 0px 8px;
+}
+
+.search-label::after {
+    content: '-->🔥';
+} */
+
+.quick-input-filter .monaco-inputbox {
+    border-radius: 12px !important;
+    padding: 8px !important;
+    border: none !important;
+    background-color: rgba(34, 34, 34, 1) !important;
+    font-family: "JetBrains Mono" !important;
+    font-size: 14px !important;
+    margin-bottom: 16px !important;
+
+}
+
+.monaco-inputbox input::placeholder {
+    color: rgba(255, 255, 255, .5) !important;
+}
+
+.monaco-workbench label {
+    color: #fff !important;
+    font-size: 14px !important;
+}
+
+.search-icon {
+    display: none !important;
+}
+
+.codicon-search::before {
+    display: none !important;
+}
+
+.codicon-arrow-right, .codicon-arrow-left {
+    display: none !important;
+}
+
+.editor-group-watermark {
+    max-width: none !important;
+}
+
+.monaco-editor .squiggly-error {
+    display: none !important;
+}
+
+/* .search-icon {
+    display: none !important;
+}
+
+.action-label {
+    display: none !important;
+} */
+
+/* .actions-container {
+    display: none !important;
+} */
+
+.sidebar {
+    height: 100vh !important;
+}
+
+.titlebar-right > * {
+    display: none !important;
+}
+
+/* ul[role="toolbar"] {
+    display: block !important;
+} */
+
+.label-name {
+    font-family: JetBrains Mono !important;
+    font-size: 14px !important;
+}
+
+/* .monaco-scrollable-element {
+    background: rgba(37, 40, 54, 0.5) !important;
+} */
+
+/* custom.css
 .monaco-quick-open-widget .quick-open-input {
-    background-color: #242836 !important; /* Dark background */
-    color: #ffffff !important; /* Light text color */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important; /* Drop shadow */
+    background-color: #242836 !important;
+    color: #ffffff !important;
+    box-shadof: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
   }
 
   .monaco-quick-open-widget .quick-open-entry {
-    background-color: #000 !important; /* Dark background for entries */
-    color: #FFFFFF !important; /* Light text color */
+    background-color: #000 !important;
+    color: #FFFFFF !important;
     font-size: 16px;
   }
 
@@ -75,14 +274,13 @@
 .monaco-list .monaco-list-row
 .monaco-icon-label .label-name {
     font-family: 'JetBrains Mono', monospace !important;
-    font-size: 14px !important; /* Change 14px to your desired font size */
+    font-size: 14px !important;
     font-weight: 400 !important;
     color: #FFF !important;
     opacity: .80 !important;
 }
 
 .monaco-scrollable-element {
-    /* background: transparent !important; */
     background: rgba(37, 40, 54, 0.5) !important;
 }
 
@@ -103,12 +301,23 @@
     background-color: transparent !important;
 }
 
-/* .actions-container {
-    display: block !important;
-} */
-
-.action-item {
+.action-label {
     display: none !important;
+}
+
+.search-label {
+    font-family: 'Monaspace Radon' !important;
+    font-size: 14px !important;
+    color: yellow;
+}
+
+.search-icon {
+    display: none !important;
+}
+
+.monaco-workbench .part.titlebar>.titlebar-container>.titlebar-center>.window-title>.command-center .action-item.command-center-center {
+    border: none !important;
+    background: transparent !important;
 }
 
 .slider {
@@ -118,4 +327,4 @@
     background: #e15e71 !important;
     border-radius: 5px !important;
     left: auto !important
-}
+} */
