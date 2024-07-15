@@ -1,7 +1,4 @@
 {
-    "workbench.colorTheme": "Palenight (Mild Contrast)",
-
-    // Better Defaults
     "editor.copyWithSyntaxHighlighting": false,
     "diffEditor.ignoreTrimWhitespace": false,
     "editor.emptySelectionClipboard": false,
@@ -23,7 +20,7 @@
     // Silence the Noise
     "breadcrumbs.enabled": false,
     "scm.diffDecorations": "none",
-    "editor.hover.delay": 1000,
+    "editor.hover.delay": 1500,
     "editor.hover.enabled": true,
     "editor.matchBrackets": "never",
     "workbench.tips.enabled": false,
@@ -46,7 +43,7 @@
     "editor.gotoLocation.multipleTypeDefinitions": "goto",
 
     // Typography
-    "editor.fontFamily": "Monaspace Argon Var, JetBrains Mono, Fira Code",
+    "editor.fontFamily": "Geist Mono, JetBrains Mono, Fira Code",
     "editor.suggestFontSize": 16,
     "editor.suggestLineHeight": 30,
     "terminal.integrated.lineHeight": 1.5,
@@ -133,14 +130,13 @@
     "explorer.sortOrder": "type",
     "prettier.tabWidth": 4,
     "vetur.format.options.tabSize": 4,
-    "workbench.tree.indent": 30,
+    "workbench.tree.indent": 15,
     "[html]": {
         "editor.defaultFormatter": "apility.beautify-blade",
         "editor.formatOnSave": true
     },
     "editor.wordWrapColumn": 120,
     "files.autoSave": "afterDelay",
-    "editor.cursorStyle": "line-thin",
     "[css]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.formatOnSave": true
@@ -155,7 +151,6 @@
     "[json]": {
         "editor.defaultFormatter": "vscode.json-language-features"
     },
-    "workbench.iconTheme": "material-icon-theme",
     "security.workspace.trust.untrustedFiles": "open",
     "editor.linkedEditing": true,
     "editor.formatOnSave": false,
@@ -163,14 +158,14 @@
     "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'calt', 'dlig'",
     "diffEditor.wordWrap": "on",
     "notebook.output.wordWrap": true,
-    "editor.fontSize": 16.3,
+    "editor.fontSize": 16,
     "editor.minimap.maxColumn": 250,
     "codesnap.containerPadding": "8em",
     "codesnap.boxShadow": "rgba(0, 0, 0, 0.55) 0px 12px 24px",
     "explorer.confirmDelete": false,
     "editor.accessibilitySupport": "off",
     "chat.editor.wordWrap": "on",
-    "editor.wordWrap": "bounded",
+    "editor.wordWrap": "wordWrapColumn",
     "[php]": {
         "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
     },
@@ -178,8 +173,7 @@
         "plaintext": "html"
     },
     "tailwindCSS.experimental.configFile": null,
-    "editor.fontWeight": "450",
-    "workbench.productIconTheme": "fluent-icons",
+    "editor.fontWeight": "400",
     "workbench.activityBar.location": "hidden",
     "workbench.statusBar.visible": false,
     "editor.inlineSuggest.suppressSuggestions": true,
@@ -188,37 +182,20 @@
     "codesnap.roundedCorners": true,
     "editor.padding.top": 16,
     "editor.cursorBlinking": "solid",
-    "vscode_custom_css.imports": [
-        "file:///Users/glennraya/custom-font-vscode.css"
-    ],
     "git.openRepositoryInParentFolders": "never",
-    "security.promptForLocalFileProtocolHandling": false,
-    "workbench.preferredDarkColorTheme": "GitHub Dark Default",
-    "workbench.preferredHighContrastColorTheme": "Palenight (Mild Contrast)",
-    "workbench.preferredHighContrastLightColorTheme": "Palenight (Mild Contrast)",
-    "workbench.preferredLightColorTheme": "Palenight (Mild Contrast)",
+    // "security.promptForLocalFileProtocolHandling": false,
     "editor.stickyScroll.enabled": false,
-    "editor.lineHeight": 30,
+    "editor.lineHeight": 32,
 
     // My custom UI settings:
-    "workbench.colorCustomizations": {
-        "sideBar.background": "#181b29",
-        // "list.activeSelectionBackground": "#212842",
-        "editorError.foreground": "#ff0c00", // Change this to your desired color for errors
-
-        "quickInput.background": "#181b29", // Dark background like Spotlight
-        "quickInput.foreground": "#ffffff", // Light text color like Spotlight
-        "quickInputTitle.background": "#1c1c1c", // Darker title background
-        "list.hoverBackground": "#333333", // Slightly lighter background for hovered items
-        "list.activeSelectionBackground": "#555555", // Background for the active selected item
-        "list.activeSelectionForeground": "#ffffff", // Foreground for the active selected item
-        "list.inactiveSelectionBackground": "#2d2d2d", // Background for inactive selected items
-        "list.inactiveSelectionForeground": "#ffffff", // Foreground for inactive selected items
-        "list.focusBackground": "#444444", // Background for the focused item
-        "list.focusForeground": "#ffffff", // Foreground for the focused item
-        "pickerGroup.foreground": "#888888", // Foreground color for group labels
-        "pickerGroup.border": "#333333" // Border color for group labels
-    },
+    // "workbench.colorCustomizations": {
+    //     "editorError.foreground": "#ff0c00", // Change this to your desired color for errors
+    //     "quickInput.foreground": "#ffffff", // Light text color like Spotlight
+    //     "list.activeSelectionForeground": "#ffffff", // Foreground for the active selected item
+    //     "list.inactiveSelectionBackground": "#972442", // Background for inactive selected items
+    //     "list.inactiveSelectionForeground": "#ffffff", // Foreground for inactive selected items
+    //     "list.focusForeground": "#ffffff", // Foreground for the focused item
+    // },
     "editor.tokenColorCustomizations": {
         "textMateRules": [
             {
@@ -238,29 +215,14 @@
                 "fontStyle": "",
               },
             },
-            {
-                "scope": "variable.other.readwrite.alias",
-                "settings": {
-                    "foreground": "#e15e71"
-                }
-            },
-            {
-                "scope": [
-                  "variable.other.constant"
-                ],
-                "settings": {
-                  "foreground": "#FFFFFF"
-                }
-              },
-              {
-                "scope": [
-                  "meta.function-call",
-                  "meta.class"
-                ],
-                "settings": {
-                  "foreground": "#FFFFFF"
-                }
-            },
           ]
     },
+    "material-icon-theme.saturation": 0,
+    "vscode_custom_css.imports": [
+        "file:///Users/glennraya/custom-font-vscode.css",
+        "file:///Users/glennraya/art.css",
+    ],
+    "workbench.colorTheme": "Ayu Mirage Bordered",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.sideBar.location": "right",
 }
