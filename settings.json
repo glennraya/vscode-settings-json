@@ -192,8 +192,8 @@
     },
     "material-icon-theme.saturation": 0,
     "vscode_custom_css.imports": [
-        "file:///Users/glennraya/custom-vscode.css"
-        // "file:///Users/glennraya/vscode-script.js"
+        "file:///Users/glennraya/custom-vscode.css",
+        "file:///Users/glennraya/vscode-script.js"
     ],
     "workbench.colorTheme": "React Theme",
     "workbench.iconTheme": "eq-material-theme-icons-light",
