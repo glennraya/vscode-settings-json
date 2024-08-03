@@ -10,9 +10,11 @@
     // Absolute file paths for your css/js files
     // For Mac or Linux
     // "file:///Users/your-user-name/custom-vscode.css"
+    // "file:///Users/your-user-name/custom-vscode-script.js"
 
     // For Windows
-    // "C:/username/custom-vscode.css"
+    // "file:///C:/path-of-custom-css/custom-vscode.css"
+    // "file:///C:/path-of-custom-css/custom-vscode-script.js"
 ],
 ```
 4. You might need to take ownership of the CSS/JS files you made or run VS Code with admin privileges on certain operating system:
