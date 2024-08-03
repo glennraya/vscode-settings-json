@@ -66,11 +66,6 @@ document.addEventListener('DOMContentLoaded', function() {
         targetDiv.appendChild(newElement);
     }
 
-    function handleEscape() {
-        // Your handleEscape function logic here
-        console.log("handleEscape function triggered");
-    }
-
     // Remove the backdrop blur from the DOM when esc key is pressed.
     function handleEscape() {
         const element = document.getElementById("command-blur");
