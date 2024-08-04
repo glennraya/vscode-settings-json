@@ -2,7 +2,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const checkElement = setInterval(() => {
         const commandDialog = document.querySelector(".quick-input-widget");
         if (commandDialog) {
-
+          // Apply the blur effect immediately if the command dialog is visible
+          if (commandDialog.style.display !== "none") {
+            runMyScript();
+          }
             // Create an DOM observer to 'listen' for changes in element's attribute.
             const observer = new MutationObserver((mutations) => {
                 mutations.forEach((mutation) => {
