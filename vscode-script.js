@@ -1,77 +1,97 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const checkElement = setInterval(() => {
-        const commandDialog = document.querySelector(".quick-input-widget");
-        if (commandDialog) {
-          // Apply the blur effect immediately if the command dialog is visible
-          if (commandDialog.style.display !== "none") {
-            runMyScript();
-          }
-            // Create an DOM observer to 'listen' for changes in element's attribute.
-            const observer = new MutationObserver((mutations) => {
-                mutations.forEach((mutation) => {
-                    if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
-                        if (commandDialog.style.display === 'none') {
-                            handleEscape();
+const TARGET_DIV_CLASS = '.monaco-workbench';
+const COMMAND_CENTER_DIV_CLASS = '.quick-input-widget';
+const BLUR_BACKGROUND_DIV_ID = 'custom-command-center-blur';
+
+document.addEventListener('DOMContentLoaded', () => {
+    const checkMonacoWorkbench = setInterval(() => {
+        const targetDiv = document.querySelector(TARGET_DIV_CLASS);
+
+        if (!targetDiv) {
+            return;
+        }
+
+        // Clear the interval once the targetDiv is found.
+        clearInterval(checkMonacoWorkbench);
+
+        // Observer to listen to children being added/removed from targetDiv.
+        const targetObserver = new MutationObserver((targetMutations) => {
+            for (const parentMutation of targetMutations) {
+                if (parentMutation.type !== 'childList') {
+                    continue;
+                }
+
+                const commandCenterDiv = document.querySelector(COMMAND_CENTER_DIV_CLASS);
+
+                // Go to the next iteration if the command dialog is not found.
+                if (!commandCenterDiv) {
+                    continue;
+                }
+
+                // Disconnect the child list observer once the command dialog is found.
+                targetObserver.disconnect();
+
+                // Handle the initial open of the command center.
+                handleCommandCenterOpen();
+
+                // Observer to detect when the command center is opened/closed.
+                const commandCenterObserver = new MutationObserver((commandCenterMutations) => {
+                    for (const mutation of commandCenterMutations) {
+                        if (mutation.type !== 'attributes') {
+                            continue;
+                        } else if (mutation.attributeName !== 'style') {
+                            continue;
+                        }
+
+                        // @ts-expect-error • Style exists but can't be inferred.
+                        if (commandCenterDiv.style.display === 'none') {
+                            // If the command center `display` style is set to
+                            // `none`, remove the blurred background.
+                            handleCommandCenterClose();
                         } else {
-                            // If the .quick-input-widget element (command palette) is in the DOM
-                            // but no inline style display: none, show the backdrop blur.
-                            runMyScript();
+                            // Otherwise, add the blurred background.
+                            handleCommandCenterOpen();
                         }
                     }
                 });
-            });
 
-            observer.observe(commandDialog, { attributes: true });
+                commandCenterObserver.observe(commandCenterDiv, {
+                    attributes: true,
+                });
+            }
+        });
 
-            // Clear the interval once the observer is set
-            clearInterval(checkElement);
-        } else {
-            console.log("Command dialog not found yet. Retrying...");
-        }
-    }, 500); // Check every 500ms
+        targetObserver.observe(targetDiv, {
+            childList: true,
+        });
+    }, 100); // Check every 100ms
 
-    // Execute when command palette was launched.
-    document.addEventListener('keydown', function(event) {
-        if ((event.metaKey || event.ctrlKey) && event.key === 'p') {
-            event.preventDefault();
-            runMyScript();
-        } else if (event.key === 'Escape' || event.key === 'Esc') {
-            event.preventDefault();
-            handleEscape();
-        }
-    });
+    function handleCommandCenterOpen() {
+        const targetDiv = document.querySelector(TARGET_DIV_CLASS);
 
-    // Ensure the escape key event listener is at the document level
-    document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape' || event.key === 'Esc') {
-            handleEscape();
-        }
-    }, true);
-
-    function runMyScript() {
-        const targetDiv = document.querySelector(".monaco-workbench");
-
-        // Remove existing element if it already exists
-        const existingElement = document.getElementById("command-blur");
+        // Delete the existing element if it already exists.
+        const existingElement = document.getElementById(BLUR_BACKGROUND_DIV_ID);
         if (existingElement) {
             existingElement.remove();
         }
 
-        // Create and configure the new element
-        const newElement = document.createElement("div");
-        newElement.setAttribute('id', 'command-blur');
+        // Create and configure the new element.
+        const backgroundDiv = document.createElement('div');
+        backgroundDiv.setAttribute('id', BLUR_BACKGROUND_DIV_ID);
 
-        newElement.addEventListener('click', function() {
-            newElement.remove();
+        // Add an event listener to remove the element on clicked.
+        backgroundDiv.addEventListener('click', function () {
+            backgroundDiv.remove();
         });
 
-        // Append the new element as a child of the targetDiv
-        targetDiv.appendChild(newElement);
+        // Append the new element as a child of the targetDiv.
+        targetDiv?.appendChild(backgroundDiv);
     }
 
-    // Remove the backdrop blur from the DOM when esc key is pressed.
-    function handleEscape() {
-        const element = document.getElementById("command-blur");
+    // Remove the backdrop blur.
+    function handleCommandCenterClose() {
+        const element = document.getElementById(BLUR_BACKGROUND_DIV_ID);
+
+        // Trigger the click handler that will remove the element.
         if (element) {
             element.click();
         }
