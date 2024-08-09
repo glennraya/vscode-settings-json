@@ -1,6 +1,6 @@
 const TARGET_DIV_CLASS = '.monaco-workbench';
 const COMMAND_CENTER_DIV_CLASS = '.quick-input-widget';
-const BLUR_BACKGROUND_DIV_ID = 'custom-command-center-blur';
+const BLUR_BACKGROUND_DIV_ID = 'command-blur';
 
 document.addEventListener('DOMContentLoaded', () => {
     const checkMonacoWorkbench = setInterval(() => {
