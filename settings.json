@@ -44,8 +44,8 @@
 
     // Typography
     "editor.fontFamily": "Geist Mono, JetBrains Mono, Fira Code",
-    "editor.suggestFontSize": 16,
-    "editor.suggestLineHeight": 30,
+    "editor.suggestFontSize": 12,
+    "editor.suggestLineHeight": 15,
     "terminal.integrated.lineHeight": 1.5,
     "terminal.integrated.fontSize": 16,
 
@@ -142,7 +142,7 @@
     "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'calt', 'dlig'",
     "diffEditor.wordWrap": "on",
     "notebook.output.wordWrap": true,
-    "editor.fontSize": 16,
+    "editor.fontSize": 12,
     "editor.minimap.maxColumn": 250,
     "codesnap.containerPadding": "8em",
     "codesnap.boxShadow": "rgba(0, 0, 0, 0.55) 0px 12px 24px",
@@ -167,7 +167,7 @@
     "editor.padding.top": 16,
     "editor.cursorBlinking": "solid",
     "editor.stickyScroll.enabled": false,
-    "editor.lineHeight": 32,
+    "editor.lineHeight": 16,
 
     "editor.tokenColorCustomizations": {
         "textMateRules": [
