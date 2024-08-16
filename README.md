@@ -12,9 +12,9 @@
     // "file:///Users/your-user-name/custom-vscode.css",
     // "file:///Users/your-user-name/custom-vscode-script.js"
 
-    // For Windows (use double backslash `\\` for Windows paths)
-    // "file:///C:\\path-of-custom-css\\custom-vscode.css",
-    // "file:///C:\\path-of-custom-css\\custom-vscode-script.js"
+    // For Windows
+    // "file:///C:/path-of-custom-css/custom-vscode.css",
+    // "file:///C:/path-of-custom-css/custom-vscode-script.js"
 ],
 ```
 4. You might need to take ownership of the CSS/JS files you made or run VS Code with admin privileges on certain operating system:
