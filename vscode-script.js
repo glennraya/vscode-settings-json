@@ -67,6 +67,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Append the new element as a child of the targetDiv
         targetDiv.appendChild(newElement);
+
+        // Hide the sticky widget
+        const widget = document.querySelector(".sticky-widget");
+        if (widget) {
+            widget.style.opacity = 0;
+        }
+
+        // Hide the tree sticky widget
+        const treeWidget = document.querySelector(".monaco-tree-sticky-container");
+        if (treeWidget) {
+            treeWidget.style.opacity = 0;
+        }
     }
 
     // Remove the backdrop blur from the DOM when esc key is pressed.
@@ -74,6 +86,18 @@ document.addEventListener('DOMContentLoaded', function() {
         const element = document.getElementById("command-blur");
         if (element) {
             element.click();
+        }
+
+        // Show the sticky widget
+        const widget = document.querySelector(".sticky-widget");
+        if (widget) {
+            widget.style.opacity = 1;
+        }
+
+        // Show the tree sticky widget
+        const treeWidget = document.querySelector(".monaco-tree-sticky-container");
+        if (treeWidget) {
+            treeWidget.style.opacity = 1;
         }
     }
 });
