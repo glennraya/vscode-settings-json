@@ -67,8 +67,10 @@ document.addEventListener('DOMContentLoaded', function() {
         targetDiv.appendChild(newElement);
 
         // Hide the sticky widget
-        const widget = document.querySelector(".sticky-widget");
-        widget && (widget.style.opacity = 0);
+        const widgets = document.querySelectorAll(".sticky-widget");
+        widgets.forEach((widget) => {
+            widget.style.opacity = 0;
+        });
 
         // Hide the tree sticky widget
         const treeWidget = document.querySelector(".monaco-tree-sticky-container");
@@ -81,8 +83,10 @@ document.addEventListener('DOMContentLoaded', function() {
         element && element.click();
 
         // Show the sticky widget
-        const widget = document.querySelector(".sticky-widget");
-        widget && (widget.style.opacity = 1);
+        const widgets = document.querySelectorAll(".sticky-widget");
+        widgets.forEach((widget) => {
+            widget.style.opacity = 1;
+        });
 
         // Show the tree sticky widget
         const treeWidget = document.querySelector(".monaco-tree-sticky-container");
