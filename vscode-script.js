@@ -53,9 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Remove existing element if it already exists
         const existingElement = document.getElementById("command-blur");
-        if (existingElement) {
-            existingElement.remove();
-        }
+        existingElement && existingElement.remove();
 
         // Create and configure the new element
         const newElement = document.createElement("div");
@@ -67,13 +65,31 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Append the new element as a child of the targetDiv
         targetDiv.appendChild(newElement);
+
+        // Hide the sticky widget
+        const widgets = document.querySelectorAll(".sticky-widget");
+        widgets.forEach((widget) => {
+            widget.style.opacity = 0;
+        });
+
+        // Hide the tree sticky widget
+        const treeWidget = document.querySelector(".monaco-tree-sticky-container");
+        treeWidget && (treeWidget.style.opacity = 0);
     }
 
     // Remove the backdrop blur from the DOM when esc key is pressed.
     function handleEscape() {
         const element = document.getElementById("command-blur");
-        if (element) {
-            element.click();
-        }
+        element && element.click();
+
+        // Show the sticky widget
+        const widgets = document.querySelectorAll(".sticky-widget");
+        widgets.forEach((widget) => {
+            widget.style.opacity = 1;
+        });
+
+        // Show the tree sticky widget
+        const treeWidget = document.querySelector(".monaco-tree-sticky-container");
+        treeWidget && (treeWidget.style.opacity = 1);
     }
 });
