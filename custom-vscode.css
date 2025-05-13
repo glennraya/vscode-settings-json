@@ -240,7 +240,10 @@
 
 /* Actions after command palette text input */
 .quick-input-inline-action-bar .actions-container .action-item{
-	padding: 17px 0 !important;
+	margin-bottom: 16px !important; /* Same margin-bottom as .monaco-inputbox */
+}
+.quick-input-header{
+	align-items: center;
 }
 
 /* Command palette's input box placeholder. */
