@@ -238,6 +238,14 @@
     backdrop-filter: blur(8px);
 }
 
+/* Actions after command palette text input */
+.quick-input-inline-action-bar .actions-container .action-item{
+	margin-bottom: 16px !important; /* Same margin-bottom as .monaco-inputbox */
+}
+.quick-input-header{
+	align-items: center;
+}
+
 /* Command palette's input box placeholder. */
 .monaco-inputbox input::placeholder {
     color: rgba(255, 255, 255, .3) !important;
